@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class ArticleQuerySet(models.QuerySet):
     def published(self):
-        return self.filter(published_at = True)
+        return self.filter(published = True)
 
 
 class Article(models.Model):
@@ -13,6 +13,9 @@ class Article(models.Model):
     created_at = models.DateTimeField(auto_now_add = True)
     published = models.BooleanField(default = True)
     modified_at = models.DateTimeField(auto_now = True)
+
+    objects = ArticleQuerySet.as_manager()
+    
     def __str__(self):
         return self.title
 
