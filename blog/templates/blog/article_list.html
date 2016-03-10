@@ -1,0 +1,8 @@
+<ul>
+{% for article in article_list %}
+    <li>{{forloop.counter}} - {{article.title}}</li>
+    <p>{{article.body}}</p>
+{% empty %}
+    <b>No content</b>
+{% endfor %}
+</ul>

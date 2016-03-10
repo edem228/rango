@@ -26,6 +26,10 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# for markdown skin
+
+MARKDOWN_EDITOR_SKIN = 'simple'
+
 
 # Application definition
 
